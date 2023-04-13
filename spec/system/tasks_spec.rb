@@ -5,8 +5,8 @@ RSpec.describe 'Task management function', type: :system do
     context 'When registering a task' do
       it 'The registered task is displayed' do
         FactoryBot.create(:task)
+     
         visit @task
-        
         expect(page).to have_content 'Préparation des documents'
       end
     end
@@ -17,7 +17,7 @@ RSpec.describe 'Task management function', type: :system do
       it 'A list of registered tasks is displayed' do
         FactoryBot.create(:task)
         visit tasks_path
-       
+        
         expect(page).to have_content 'Préparation des documents'
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe 'Task management function', type: :system do
        it 'The content of the task is displayed' do
         FactoryBot.create(:task)
         visit @task
-      
+       
         expect(page).to have_content 'Créer une proposition.'
        end
      end
